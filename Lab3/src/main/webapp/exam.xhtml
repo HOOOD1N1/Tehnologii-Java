@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui">
+<head>
+  <title><ui:insert name="title">Add exams</ui:insert></title>
+</head>
+
+<body>
+<h1>This is the exams page</h1>
+<h3>Add a new exam</h3>
+
+<h:form>
+<p:outputLabel value="Name: "/>
+<p:inputText id="examName" value="#{exam.name}" required="true" />
+<p:message for="examName" />
+<br/>
+<p:outputLabel value="Starting Time: "/>
+<p:datePicker id="timeOfStart" value="#{exam.timeOfStart}" required="true" monthNavigator="true" placeholder="mm/dd/year"/>
+<p:message for="timeOfStart" />
+
+<br/>
+<p:outputLabel value="Duration: "/>
+<p:inputText type="number" value="#{exam.duration}" id="duration" required="true" placeholder="Duration in minutes"/> min
+<p:message for="duration" />
+
+
+<h:commandButton value="Submit" action="#{exam.add}"/>
+</h:form>
+</body>
+
+</html>
