@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:cc="http://java.sun.com/jsf/composite"
+	  xmlns:p="http://primefaces.org/ui">
+
+<cc:interface>        
+      <cc:attribute name="dataView" />          
+  </cc:interface>
+  <cc:implementation>
+    <p:dataTable id="dataTable"
+                   value="#{cc.attrs.dataView}"
+                   var="exam"
+    >
+   		<p:column headerText="Name">
+        	<h:outputText value="#{exam.name}" />
+        </p:column>
+       <!--
+      <p:ajax event="rowDblselect"  
+              listener="#{cc.attrs.dataView.onRowDblClckSelect}" global="false" />
+      <p:ajax event="rowSelect" listener="#{cc.attrs.dataView.onRowSelect}" 
+              update="addBtn editBtn removeBtn emailBtn"/>
+      <cc:insertFacet name="header"/>
+      <cc:insertChildren />
+      <f:facet id="footer" name="footer">
+       </f:facet>
+       -->   
+                  
+    </p:dataTable>
+  </cc:implementation>
+
+</html>

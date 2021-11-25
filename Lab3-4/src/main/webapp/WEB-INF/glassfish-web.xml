@@ -1,0 +1,6 @@
+<glassfish-web-app>
+        <resource-ref>
+         <res-ref-name>jdbc/exams</res-ref-name>
+         <jndi-name>jdbc/exams</jndi-name>
+    </resource-ref>
+</glassfish-web-app>

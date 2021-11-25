@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:p="http://primefaces.org/ui">
+<h:head>
+  <title>
+  	<ui:insert name="title">Exam Scheduling</ui:insert>
+  </title>
+</h:head>
+<h:body style="height:100%;width:100%;">
+<ui:composition template="/page.xhtml">
+<ui:param name="pageTitle" value="Home" />
+<ui:define name="content" >
+<div style="height:100%;margin:0 auto;flex-grow:2;">
+	<h1>Exam Scheduling</h1>
+	<p:button outcome="exam" value="Add exams"/>
+	<p:button outcome="students" value="Add students"/>
+</div>
+</ui:define>
+</ui:composition>
+</h:body>
+
+</html>
