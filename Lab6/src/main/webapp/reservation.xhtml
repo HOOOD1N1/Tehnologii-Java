@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:my="http://java.sun.com/jsf/composite/components">
+<h:head>
+  <title>
+  	<ui:insert name="title">Reservation Page</ui:insert>
+  </title>
+</h:head>
+ 
+ <h:body>
+	<ui:composition template="/page.xhtml">
+	<ui:param name="pageTitle" value="Reservation" />
+	
+	<ui:define name="content">
+		<div id="reservation_form_container" style="display:flex;flex-flow:row nowrap;width: 80%; height:80%; margin: 0 auto;">
+			<form>
+				<div id="exam_list">
+					<p:outputLabel value="Available Exams: "/>
+					<p:selectOneMenu value="#{resourcesRepository.examName}">
+						<f:selectItems var="elem" itemLabel="#{elem.name}" itemValue="#{elem.name}" value="#{examRepository.allExams()}"/>
+					</p:selectOneMenu>
+				</div>
+			
+				<div id="reservation_form">
+					<p:outputLabel value="Available resources: "/>
+					<p:selectCheckboxMenu value="#{resourcesRepository.selectedResourceNames}" multiple="true">
+						<f:selectItems var="resource" itemLabel="#{resource.name}" itemValue="#{resource.name}" value="#{resourcesRepository.allResources()}"/>
+					</p:selectCheckboxMenu>
+				
+				</div>
+				<h:commandButton value="Submit" action="#{resourcesRepository.addAssignment()}"/>
+			</form>
+		</div>
+	</ui:define>
+
+</ui:composition>
+</h:body>
+</html>

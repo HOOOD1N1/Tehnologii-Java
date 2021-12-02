@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:cc="http://java.sun.com/jsf/composite">
+<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+<h:head>
+  <title><ui:insert name="title">#{pageTitle}</ui:insert></title>
+</h:head>
+
+<h:body>
+<ui:composition name="/page.xhtml">
+	<ui:define name="content">
+	<ui:insert name="contentView">
+		<!--
+            <p:messages id="messages" for="dataForm" showDetail="false"  
+                         autoUpdate="true" closable="true" />
+        -->
+        </ui:insert>
+        	<ui:insert name="dataViewContent">
+                A view of the dataTable
+            </ui:insert>        
+	
+</ui:define>
+</ui:composition>
+</h:body>
+</f:view>
+</html>
