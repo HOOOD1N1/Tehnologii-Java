@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:p="http://primefaces.org/ui"
+xmlns:my="http://java.sun.com/jsf/composite/components" > 
+  <h:head>
+    <meta charset="UTF-8"/>
+    <title>Log In Page</title>
+  </h:head>
+  <h:body>
+    <div id="container">
+    	<h3>Log In</h3>
+    	<h:form>
+    		<div>
+    			<p:outputLabel value="#{user.error}"/>
+    		</div>
+    		<p:outputLabel value="Username:" />
+			<p:inputText id="name" required="true" value="#{user.name}" requiredMessage="Username is required"/>
+			<p:message for="name" />
+			
+			<p:outputLabel value="Password:" />
+			<p:password id="password" required="true" value="#{user.password}" requiredMessage="Password is required"/>
+			<p:message for="password" />
+			
+			<h:commandButton value="Log In" action="#{user.logIn}"/>
+			<h:button value="Sign Up" outcome="SignUp" />
+			
+    	</h:form>
+    	<p:outputLabel value="#{user.show()}" />
+    	<p:outputLabel value="#{user.getNumber()}" />
+    </div>
+  </h:body>
+</html>
