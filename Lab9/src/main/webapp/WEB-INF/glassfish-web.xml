@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glassfish-web-app error-url="">
+    <class-loader delegate="true"/>
+    <jsp-config>
+        <property name="keepgenerated" value="true">
+            <description>Keep a copy of the generated servlet class' java code.</description>
+        </property>
+    </jsp-config>
+  
+    <security-role-mapping>
+        <role-name>admin</role-name>
+        <group-name>admin</group-name>
+    </security-role-mapping>
+  
+    <security-role-mapping>
+        <role-name>author</role-name>
+        <group-name>author</group-name>
+    </security-role-mapping>
+  
+</glassfish-web-app>
